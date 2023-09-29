@@ -11,6 +11,7 @@ The submarine has a bingo subsystem to help passengers (currently, you and the g
 
 7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
 
+```bash
 22 13 17 11  0
  8  2 23  4 24
 21  9 14 16  7
@@ -28,6 +29,7 @@ The submarine has a bingo subsystem to help passengers (currently, you and the g
 18  8 23 26 20
 22 11 13  6  5
  2  0 12  3  7
+ ```
 
 After the first five numbers are drawn (7, 4, 9, 5, and 11), there are no winners, but the boards are marked as follows (shown here adjacent to each other to save space):
 
