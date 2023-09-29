@@ -83,3 +83,98 @@ In this interactive session we assume the text files boards01.txt and boards02.t
 > score("boards02.txt")
 8580
  ```
+<hr/>
+<hr/>
+
+ # THE SOLUTION
+
+### 1- Initialization and Imports:
+
+```bash
+  const fs = require("fs");
+  ```
+
+  > The code begins by importing the fs module, which allows you to interact with the file system to read and write files.
+
+### 2- Shuffle Function:
+
+ ```bash
+  function shuffle(array) {...}
+  ```
+
+  > This function takes an array as its parameter and shuffles (randomizes) its contents. 
+  > The function uses the Durstenfeld shuffle algorithm, an optimized version of the Fisher-Yates algorithm.
+
+### 3- Generating Bingo Boards:
+
+ ```bash
+  function generateBoardFile(filename) {...}
+  ```
+> This function creates Bingo boards:
+<ul>
+  <li>It generates a shuffled list of numbers from 0 to 26.</li>
+  <li>Writes the shuffled numbers to a file, which represents the order in which they'll be drawn.</li>
+  <li>It then generates three 5x5 Bingo boards and appends them to the same file.</li>
+</ul>
+
+
+### 4- Parsing the File:
+
+ ```bash
+  function parseFile(path) {...}
+  ```
+> This function reads a Bingo board file. It extracts the drawn numbers and the three Bingo boards stored in the file, 
+> returning them in a structured format for further processing.
+
+### 5- Check for a Winning Board:
+
+ ```bash
+  function checkBoard(board) {...}
+  ```
+> This function checks if a given Bingo board has won. It considers a board as winning if:
+<ul>
+  <li>All numbers in any row have been drawn.</li>
+  <li>All numbers in any column have been drawn.</li>
+</ul>
+
+
+### 6- Calculate the Score:
+
+ ```bash
+  function score(path) {...}
+  ```
+  > This function computes the score for the boards in the provided file:
+<ul>
+  <li>It reads the file and retrieves the drawn numbers and boards.</li>
+  <li>For each drawn number, it marks that number on all the boards.</li>
+  <li>It then checks each board for a win.</li>
+  <li>If a board wins, it computes the score as the sum of the remaining unmarked numbers on the board multiplied by the last drawn number.</li>
+</ul>
+
+
+### 7- Executing the Main Logic:
+
+
+ ```bash
+  generateBoardFile("boards01.txt");
+  generateBoardFile("boards02.txt");
+  ```
+
+ ```bash
+  console.log("> score('boards01.txt')");
+  console.log(score("boards01.txt"));
+  console.log("> score('boards02.txt')");
+  console.log(score("boards02.txt"));
+  ```
+
+  <ul>
+    <li>It creates two Bingo files: boards01.txt and boards02.txt.</li>
+    <li>Then, it calculates the scores for each file and prints them out.</li>
+  </ul>
+
+  <hr/>
+
+  <p>In summary, this code simulates a Bingo game. 
+  It first generates two sets of Bingo boards in two files. 
+  After that, it calculates and displays the score (if any) for each 
+  set of boards based on the drawn numbers and the state of the boards.</p>
